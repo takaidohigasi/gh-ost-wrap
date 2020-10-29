@@ -4,6 +4,6 @@ import (
 	"github.com/takaidohigasi/gh-ost-wrap/cmd"
 )
 
-func main () {
+func main() {
 	cmd.Execute()
 }

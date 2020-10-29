@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	yaml "gopkg.in/yaml.v2"
+	//yaml "gopkg.in/yaml.v2"
 )
 
 var ghostDefaultConfig = "gh-ost.yaml"
@@ -29,5 +29,6 @@ func Execute() {
 
 func init() {
 	//cobra.OnInitialize(initConfig)
-	rootCmd.Flags().StringVarP("config", "c", ghostDefaultConfig, "config path for default gh-ost parameteter")
+	fmt.Print("a")
+	//rootCmd.Flags().StringVarP("config", "c", ghostDefaultConfig, "config path for default gh-ost parameteter")
 }

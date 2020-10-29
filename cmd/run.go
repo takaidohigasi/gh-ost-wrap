@@ -12,7 +12,7 @@ import (
 //	"syscall"
 //	"time"
 
-	log "github.com/sirupsen/logrus"
+//	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
 
@@ -34,7 +34,7 @@ func ghostRun (cmd *cobra.Command, args []string) error {
 	buf, err := ioutil.ReadFile("./gh-ost-defaults.yaml.sample")
 	if err != nil {
 		fmt.Println(err)
-		return
+		return err
 	}
 
 	var conf GhostConf
