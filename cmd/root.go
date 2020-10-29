@@ -10,15 +10,15 @@ import (
 )
 
 type GhostConf struct {
-	ChunkSize                    int `yaml:"chunk-size"`
-	CriticalLoad                 string `yaml:"critical-load"`
-	CriticalLoadHibernateSeconds int `yaml:"critical-load-hibernate-seconds"`
-	CutOverLockTimeoutSeconds    int `yaml:"cut-over-lock-timeout-seconds"`
-	DefaultRetries               int `yaml:"default-retries"`
+	ChunkSize                    int      `yaml:"chunk-size"`
+	CriticalLoad                 string   `yaml:"critical-load"`
+	CriticalLoadHibernateSeconds int      `yaml:"critical-load-hibernate-seconds"`
+	CutOverLockTimeoutSeconds    int      `yaml:"cut-over-lock-timeout-seconds"`
+	DefaultRetries               int      `yaml:"default-retries"`
 	DefaultOptions               []string `yaml:"default-options"`
-	MaxLagMillis                 int `yaml:"max-lag-millis"`
-	MaxLoad                      string `yaml:"max-load"`
-	NiceRatio                    float32 `yaml:"nice-ratio"`
+	MaxLagMillis                 int      `yaml:"max-lag-millis"`
+	MaxLoad                      string   `yaml:"max-load"`
+	NiceRatio                    float32  `yaml:"nice-ratio"`
 }
 
 var (
