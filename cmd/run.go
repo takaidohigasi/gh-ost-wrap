@@ -4,8 +4,7 @@ import (
 //	"context"
 //	"errors"
 	"fmt"
-	"gopkg.in/yaml.v2"
-	"io/ioutil"
+//	"io/ioutil"
 //	"os"
 //	"os/signal"
 //	"sync"
@@ -16,13 +15,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
-type GhostConf struct {
-	MaxLoad         string     `yaml:"max-load"`
-	CriticalLoad    string     `yaml:"critical-load"`
-}
+
 
 var runCmd = &cobra.Command{
 	Use:   "run",
+	Short: "gh-ost wrapper",
+	Long:  "gh-ost command wrapper",
 	RunE:  ghostRun,
 }
 
@@ -31,16 +29,6 @@ func init() {
 }
 
 func ghostRun (cmd *cobra.Command, args []string) error {
-	buf, err := ioutil.ReadFile("./gh-ost-defaults.yaml.sample")
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
-
-	var conf GhostConf
-	err = yaml.Unmarshal(buf, &conf)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("d: %+v", conf)
+	fmt.Print("%v", ghostConfig)
+	return nil
 }
