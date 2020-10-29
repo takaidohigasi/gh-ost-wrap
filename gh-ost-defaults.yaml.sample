@@ -1,0 +1,2 @@
+max-load: Threads_running=50
+critical-load: Threads_running=1000
