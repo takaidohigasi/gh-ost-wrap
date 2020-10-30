@@ -1,2 +1,11 @@
-max-load: Threads_running=50
+conf: .my.cnf
+chunk-size: 1000
 critical-load: Threads_running=1000
+critical-load-hibernate-seconds: 60
+cut-over-lock-timeout-seconds: 1
+default-retries: 120
+default-options:
+  - cut-over-exponential-backoff
+  - initially-drop-ghost-table
+  - ok-to-drop-table
+max-load: Threads_running=50
