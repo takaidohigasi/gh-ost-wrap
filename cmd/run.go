@@ -4,13 +4,10 @@ import (
 	//	"context"
 	//	"errors"
 	"fmt"
-	config "github.com/takaidohigasi/gh-ost-wrap/lib"
-	"io/ioutil"
-	"os"
+	"github.com/takaidohigasi/gh-ost-wrap/config"
 
 	"github.com/spf13/cobra"
     "github.com/iancoleman/strcase"
-	yaml "gopkg.in/yaml.v2"
 
 	//	"io/ioutil"
 	//	"os"
@@ -23,24 +20,9 @@ import (
 
 )
 
-type GhostConf struct {
-	ChunkSize                    int      `yaml:"chunk-size"`
-	CriticalLoad                 string   `yaml:"critical-load"`
-	CriticalLoadHibernateSeconds int      `yaml:"critical-load-hibernate-seconds"`
-	CutOverLockTimeoutSeconds    int      `yaml:"cut-over-lock-timeout-seconds"`
-	DefaultRetries               int      `yaml:"default-retries"`
-	DefaultOptions               []string `yaml:"default-options"`
-	MaxLagMillis                 int      `yaml:"max-lag-millis"`
-	MaxLoad                      string   `yaml:"max-load"`
-	NiceRatio                    float32  `yaml:"nice-ratio"`
-}
-
 var (
-	ghostConfigFile string
 	ghostConfig     GhostConf
 )
-
-var ghostDefaultConfig = "gh-ost.yaml"
 
 var runCmd = &cobra.Command{
 	Use:   "run",
